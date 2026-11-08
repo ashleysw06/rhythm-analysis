@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Rhythm Analysis
+        </title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <input id="nptID"></input>
+        <button id="btnNLZ">Analize</button>
+        <label>Mode</label>
+        <select name="mode" id="optMD">
+            <option value="1">4K</option>
+            <option value="2">7K</option>
+        </select>
+        <div class="bar">
+            <div id="rank-total" class="progress total"></div>
+        </div>
+        <div class="bar">
+            <div id="rank-d" class="progress rank-d"></div>
+            <div id="rank-c" class="progress rank-c"></div>
+            <div id="rank-b" class="progress rank-b"></div>
+            <div id="rank-a" class="progress rank-a"></div>
+            <div id="rank-s" class="progress rank-s"></div>
+            <div id="rank-ss" class="progress rank-ss"></div>
+            <div id="rank-x" class="progress rank-x"></div>
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>

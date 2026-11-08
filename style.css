@@ -1,0 +1,42 @@
+.bar {
+    height: 32px;
+    background-color: grey;
+    display: flex;
+}
+
+.progress {
+    height: 100%;
+    background-color: pink;
+}
+
+.rank-total {
+    background-color: pink;
+}
+
+.rank-d {
+    background-color: red;
+}
+
+.rank-c {
+    background-color: purple;
+}
+
+.rank-b {
+    background-color: blue;
+}
+
+.rank-a {
+    background-color: green;
+}
+
+.rank-s {
+    background-color: orange;
+}
+
+.rank-ss {
+    background-color: yellow;
+}
+
+.rank-x {
+    background-color: white;
+}
