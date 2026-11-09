@@ -8,23 +8,22 @@
     </head>
     <body>
         <div class="form">
+            <label>ID or Username</label>
             <input id="nptID"></input>
-            <button id="btnNLZ">Analize</button>
             <label>Mode</label>
             <select name="mode" id="optMD">
                 <option value="1">4K</option>
                 <option value="2">7K</option>
             </select>
+            <button id="btnNLZ">Analize</button>
         </div>
         <div class="card-user">
             <img id="imgPFP" class="card-img" src="default-pfp.png"></img>
             <p id="txtUSRNM" class="card-text">Username</p>
-            <div class="bar">
-                <p id="rank-acc-text" class="bar-text">00.000%</p>
-                <div class="container-progress">
-                    <div id="rank-total" class="progress rank-total"></div>
-                </div>
-            </div>
+
+            <br>
+
+            <label>Completion</label>
             <div class="bar">
                 <p id="rank-grade-text" class="bar-text">00.000%</p>
                 <div class="container-progress">
@@ -35,6 +34,16 @@
                     <div id="rank-s" class="progress rank-s"></div>
                     <div id="rank-ss" class="progress rank-ss"></div>
                     <div id="rank-x" class="progress rank-x"></div>
+                </div>
+            </div>
+
+            <br>
+
+            <label>Completion: Weighted</label>
+            <div class="bar">
+                <p id="rank-acc-text" class="bar-text">00.000%</p>
+                <div class="container-progress">
+                    <div id="rank-total" class="progress rank-total"></div>
                 </div>
             </div>
         </div>
