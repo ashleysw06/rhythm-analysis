@@ -4,6 +4,14 @@ const optionMode = document.getElementById("optMD");
 
 //66471
 
+
+const defaultMode = 1;
+let mapData = undefined;
+GetData(`https://api.quavergame.com/v2/mapset/search?mode=${optionMode.value}`).then(data => {
+    mapData = data;
+});
+
+document.body.background = `https://cdn.quavergame.com/mapsets/${Math.floor(43685 * Math.random())}.jpg`
 const modeToKey = {
     1: 4,
     2: 7
@@ -21,7 +29,9 @@ const GRADES = [
 ]
 
 buttonAnalize.onclick = async () => {
-    const mapData = await GetData(`https://api.quavergame.com/v2/mapset/search?mode=${optionMode.value}`);
+    if (optionMode.value != defaultMode) {
+        mapData = await GetData(`https://api.quavergame.com/v2/mapset/search?mode=${optionMode.value}`);
+    }
     console.log(`Total Ranked ${modeToKey[optionMode.value]}K: ` + mapData.total)
 
     const userData = await GetData(`https://api.quavergame.com/v2/user/${inputUserID.value || 1}`)
