@@ -7,24 +7,36 @@
     <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <input id="nptID"></input>
-        <button id="btnNLZ">Analize</button>
-        <label>Mode</label>
-        <select name="mode" id="optMD">
-            <option value="1">4K</option>
-            <option value="2">7K</option>
-        </select>
-        <div class="bar">
-            <div id="rank-total" class="progress total"></div>
+        <div class="form">
+            <input id="nptID"></input>
+            <button id="btnNLZ">Analize</button>
+            <label>Mode</label>
+            <select name="mode" id="optMD">
+                <option value="1">4K</option>
+                <option value="2">7K</option>
+            </select>
         </div>
-        <div class="bar">
-            <div id="rank-d" class="progress rank-d"></div>
-            <div id="rank-c" class="progress rank-c"></div>
-            <div id="rank-b" class="progress rank-b"></div>
-            <div id="rank-a" class="progress rank-a"></div>
-            <div id="rank-s" class="progress rank-s"></div>
-            <div id="rank-ss" class="progress rank-ss"></div>
-            <div id="rank-x" class="progress rank-x"></div>
+        <div class="card-user">
+            <img id="imgPFP" class="card-img" src="default-pfp.png"></img>
+            <p id="txtUSRNM" class="card-text">Username</p>
+            <div class="bar">
+                <p id="rank-acc-text" class="bar-text">00.000%</p>
+                <div class="container-progress">
+                    <div id="rank-total" class="progress rank-total"></div>
+                </div>
+            </div>
+            <div class="bar">
+                <p id="rank-grade-text" class="bar-text">00.000%</p>
+                <div class="container-progress">
+                    <div id="rank-d" class="progress rank-d"></div>
+                    <div id="rank-c" class="progress rank-c"></div>
+                    <div id="rank-b" class="progress rank-b"></div>
+                    <div id="rank-a" class="progress rank-a"></div>
+                    <div id="rank-s" class="progress rank-s"></div>
+                    <div id="rank-ss" class="progress rank-ss"></div>
+                    <div id="rank-x" class="progress rank-x"></div>
+                </div>
+            </div>
         </div>
         <script src="index.js"></script>
     </body>
