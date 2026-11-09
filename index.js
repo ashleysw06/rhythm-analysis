@@ -2,6 +2,8 @@ const inputUserID = document.getElementById("nptID");
 const buttonAnalize = document.getElementById("btnNLZ");
 const optionMode = document.getElementById("optMD");
 
+//66471
+
 const modeToKey = {
     1: 4,
     2: 7
@@ -9,12 +11,12 @@ const modeToKey = {
 
 const GRADES = [
     { l: "x", v: 1},
-    { l: "ss", v: 0.99},
-    { l: "s", v: 0.98},
-    { l: "a", v: 0.95},
-    { l: "b", v: 0.9},
-    { l: "c", v: 0.8},
-    { l: "d", v: 0.7},
+    { l: "ss", v: 1 - 1 / 64},
+    { l: "s", v: 1 - 1 / 32},
+    { l: "a", v: 1 - 1 / 16},
+    { l: "b", v: 1 - 1 / 8},
+    { l: "c", v: 1 - 1 / 4},
+    { l: "d", v: 1 - 1 / 2},
 ]
 
 buttonAnalize.onclick = async () => {
@@ -23,6 +25,9 @@ buttonAnalize.onclick = async () => {
 
     const userData = await GetData(`https://api.quavergame.com/v2/user/${inputUserID.value || 1}`)
     const modeData = userData.user[`stats_keys${modeToKey[optionMode.value]}`];
+
+    document.getElementById("imgPFP").src = userData.user.avatar_url
+    document.getElementById("txtUSRNM").innerText = userData.user.username
 
     const ranks = { total: 0, acc: 0 }
 
@@ -39,6 +44,8 @@ buttonAnalize.onclick = async () => {
         console.log(`${grade}-ranks: ${gradeScores}`);
     }
     document.getElementById(`rank-total`).style.width = `${100 * ranks.acc / mapData.total}%`;
+    document.getElementById(`rank-acc-text`).innerText = `${(100 * ranks.acc / mapData.total).toFixed(3)}%`
+    document.getElementById(`rank-grade-text`).innerText = `${(100 * ranks.total / mapData.total).toFixed(3)}%`
     console.log("total: " + ranks.total)
     console.log("total %: " + 100 * ranks.total / mapData.total)
     console.log("acc: " + 100 * ranks.acc / mapData.total)
